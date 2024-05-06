@@ -217,6 +217,10 @@ svg *[stroke] {
   font-weight: 700;
 }
 
+.main-block__img {
+  max-width: 570px;
+}
+
 .main-block__img img {
   max-width: 100%;
   border-radius: 50px;
@@ -270,6 +274,18 @@ svg *[stroke] {
 
   .main-block__content {
     row-gap: 2.5rem;
+  }
+}
+
+@media (max-width: 48em) and (max-width: 30em) {
+  .main-block__title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 30em) and (max-width: 21.875em) {
+  .main-block__label {
+    font-size: 1.125rem;
   }
 }
 
@@ -510,6 +526,46 @@ svg *[stroke] {
 @supports not (font-size: clamp( 1rem , 0.5862068966rem  +  0.8620689655vw , 1.125rem )) {
     .main-block__text {
       font-size: calc(1rem + 0.125 * (100vw - 48rem) / 14.5);
+    }
+}
+}
+
+@media (max-width: 30em) and (min-width: 30em) {
+  .main-block__label {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 30em) and (min-width: 21.875em) and (max-width: 30em) {
+@supports (font-size: clamp( 1.125rem , 0.7884615385rem  +  1.5384615385vw , 1.25rem )) {
+    .main-block__label {
+      font-size: clamp( 1.125rem , 0.7884615385rem  +  1.5384615385vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.125rem , 0.7884615385rem  +  1.5384615385vw , 1.25rem )) {
+    .main-block__label {
+      font-size: calc(1.125rem + 0.125 * (100vw - 21.875rem) / 8.125);
+    }
+}
+}
+
+@media (max-width: 48em) and (min-width: 48em) {
+  .main-block__title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 48em) and (min-width: 30em) and (max-width: 48em) {
+@supports (font-size: clamp( 1.75rem , 1.3333333333rem  +  1.3888888889vw , 2rem )) {
+    .main-block__title {
+      font-size: clamp( 1.75rem , 1.3333333333rem  +  1.3888888889vw , 2rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.75rem , 1.3333333333rem  +  1.3888888889vw , 2rem )) {
+    .main-block__title {
+      font-size: calc(1.75rem + 0.25 * (100vw - 30rem) / 18);
     }
 }
 }
