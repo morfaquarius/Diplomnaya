@@ -1,8 +1,8 @@
 {
-	"name": "fls-start",
-	"version": "3.0.0",
-	"description": "Start template with Gulp and Webpack",
-	"author": "FLS",
+	"name": "Diplomnaya",
+	"version": "1.0.0",
+	"description": "Website for a teachers college for thesis work",
+	"author": "Vyacheslav Plotnikov",
 	"private": true,
 	"license": "",
 	"type": "module",
