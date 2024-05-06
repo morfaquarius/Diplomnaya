@@ -28,6 +28,9 @@
 		font-family: var(--second-family);
 		font-weight: 600;
 		@include adaptiveValue("font-size", 28, 20, 0, 1410, 1000);
+		@media (max-width: em(480)) {
+			@include adaptiveValue("font-size", 20, 18, 0, 480, 350);
+		}
 		color: rgba(255, 255, 255, 0.8);
 	}
 	&__title {
@@ -36,6 +39,9 @@
 		@include adaptiveValue("font-size", 56, 44, 0, 1410, 1000);
 		@media (max-width: em(1000)) {
 			@include adaptiveValue("font-size", 44, 32, 0, 1000, 768);
+		}
+		@media (max-width: em(768)) {
+			@include adaptiveValue("font-size", 32, 28, 0, 768, 480);
 		}
 	}
 	&__text {
@@ -48,6 +54,7 @@
 		@media (max-width: em(730)) {
 			display: none;
 		}
+		max-width: 570px;
 		img {
 			max-width: 100%;
 			border-radius: 50px;
