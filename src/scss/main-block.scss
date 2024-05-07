@@ -1,5 +1,5 @@
 .main-block {
-	@include adaptiveValue("padding-bottom", 195, 79.27);
+	@include adaptiveValue("padding-bottom", 195, 50);
 	@include adaptiveValue("padding-top", 205, 104);
 	position: relative;
 	&__container {
@@ -38,10 +38,13 @@
 		font-weight: 700;
 		@include adaptiveValue("font-size", 56, 44, 0, 1410, 1000);
 		@media (max-width: em(1000)) {
-			@include adaptiveValue("font-size", 44, 32, 0, 1000, 768);
+			@include adaptiveValue("font-size", 44, 36, 0, 1000, 768);
 		}
 		@media (max-width: em(768)) {
-			@include adaptiveValue("font-size", 32, 28, 0, 768, 480);
+			@include adaptiveValue("font-size", 36, 32, 0, 768, 480);
+		}
+		@media (max-width: em(480)) {
+			@include adaptiveValue("font-size", 32, 28, 0, 768, 350);
 		}
 	}
 	&__text {
@@ -68,7 +71,26 @@
 		top: 0;
 		left: 0;
 		z-index: -1;
+	}
+
+	&__decor {
+		position: absolute;
+		animation: rotate 15s linear infinite !important;
+		@include adaptiveValue("width", 425, 100, 0, 1920, 350);
+		@include adaptiveValue("height", 425, 100, 0, 1920, 350);
+		@include adaptiveValue("bottom", -200, -50, 0, 1920, 350);
+		@include adaptiveValue("right", -200, -50, 0, 1920, 350);
 		img {
+			@include adaptiveValue("width", 425, 100, 0, 1920, 350);
+			@include adaptiveValue("height", 425, 100, 0, 1920, 350);
 		}
+	}
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
