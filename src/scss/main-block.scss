@@ -1,5 +1,5 @@
 .main-block {
-	@include adaptiveValue("padding-bottom", 195, 50);
+	@include adaptiveValue("padding-bottom", 205, 50);
 	@include adaptiveValue("padding-top", 205, 104);
 	position: relative;
 	&__container {
