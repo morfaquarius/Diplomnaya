@@ -481,7 +481,8 @@ svg *[stroke] {
   overflow: hidden;
   padding-left: 20px;
   margin-left: -20px;
-  margin-right: -30px;
+  padding-right: 25px;
+  margin-right: -25px;
 }
 
 .swiper-initialized {
