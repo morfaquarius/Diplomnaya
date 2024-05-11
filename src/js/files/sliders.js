@@ -7,7 +7,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { FreeMode } from "swiper/modules"
+import {Autoplay} from "swiper/modules"
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -34,14 +34,14 @@ function initSliders() {
 			// Указываем класс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [FreeMode],
+			modules: [Autoplay],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 4,
+			slidesPerView: "auto",
 			spaceBetween: 30,
-			freeMode: {
-				enabled: true,
-			},
+			// freeMode: {
+			// 	enabled: true,
+			// },
 			speed: 800,
 			// loop: true,
 			// autoHeight: true,
@@ -99,7 +99,12 @@ function initSliders() {
 			// 	},
 			// },
 			// События
-			on: {},
+			on: {
+        breakpoint: function(swiper, info){
+          !info.autoHeight ? document.querySelector('.tabs__wrapper').style.height = 'auto': '';
+          swiper.updateSize();
+        }
+      },
 		})
 	}
 }
