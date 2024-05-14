@@ -152,11 +152,11 @@ svg * {
 }
 
 .title span:first-child {
-  margin-right: 17%;
+  margin-right: 12%;
 }
 
 .title span:last-child {
-  margin-left: 17%;
+  margin-left: 12%;
 }
 
 .header {
@@ -456,6 +456,37 @@ svg * {
   font-variant-numeric: lining-nums tabular-nums;
 }
 
+.who-teaches__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+}
+
+.who-teaches__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  background-color: #dcccf1;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.who-teaches__name {
+  font-family: var(--second-family);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
 .swiper {
   overflow: hidden;
   padding-left: 25px;
@@ -582,6 +613,10 @@ svg * {
     padding-top: 6.25rem;
   }
 
+  .activities {
+    padding-bottom: 6.25rem;
+  }
+
   .tabs__button:nth-child(2) {
     padding-right: 1.875rem;
   }
@@ -642,6 +677,10 @@ svg * {
   .tabs-slide__wand {
     font-size: 1.125rem;
   }
+
+  .who-teaches__name {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 120em) {
@@ -672,11 +711,11 @@ svg * {
 
 @media (max-width: 61.99875em) {
   .title span:first-child {
-    margin-right: 20%;
+    margin-right: 18%;
   }
 
   .title span:last-child {
-    margin-left: 20%;
+    margin-left: 18%;
   }
 
   .menu__list {
@@ -718,11 +757,11 @@ svg * {
 
 @media (max-width: 47.99875em) {
   .title span:first-child {
-    margin-right: 23%;
+    margin-right: 21%;
   }
 
   .title span:last-child {
-    margin-left: 23%;
+    margin-left: 21%;
   }
 
   .tabs__navigation::after {
@@ -763,11 +802,11 @@ svg * {
 
 @media (max-width: 29.99875em) {
   .title span:first-child {
-    margin-right: 30%;
+    margin-right: 28%;
   }
 
   .title span:last-child {
-    margin-left: 30%;
+    margin-left: 28%;
   }
 
   .tabs-title {
@@ -800,6 +839,10 @@ svg * {
 
   .tabs-slide__price {
     padding: 15px 10px;
+  }
+
+  .who-teaches__name {
+    font-weight: 500;
   }
 }
 
@@ -889,6 +932,10 @@ svg * {
     padding-top: 3.125rem;
   }
 
+  .activities {
+    padding-bottom: 3.125rem;
+  }
+
   .tabs__button:nth-child(2) {
     padding-right: 0.625rem;
   }
@@ -948,6 +995,10 @@ svg * {
 
   .tabs-slide__wand {
     font-size: 1rem;
+  }
+
+  .who-teaches__name {
+    font-size: 1.25rem;
   }
 }
 
@@ -1045,6 +1096,18 @@ svg * {
 @supports not (padding-top: clamp( 3.125rem , 2.121559633rem  +  4.5871559633vw , 6.25rem )) {
     .activities {
       padding-top: calc(3.125rem + 3.125 * (100vw - 21.875rem) / 68.125);
+    }
+}
+
+@supports (padding-bottom: clamp( 3.125rem , 2.121559633rem  +  4.5871559633vw , 6.25rem )) {
+    .activities {
+      padding-bottom: clamp( 3.125rem , 2.121559633rem  +  4.5871559633vw , 6.25rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 3.125rem , 2.121559633rem  +  4.5871559633vw , 6.25rem )) {
+    .activities {
+      padding-bottom: calc(3.125rem + 3.125 * (100vw - 21.875rem) / 68.125);
     }
 }
 
@@ -1227,6 +1290,18 @@ svg * {
 @supports not (font-size: clamp( 1rem , 0.9598623853rem  +  0.1834862385vw , 1.125rem )) {
     .tabs-slide__wand {
       font-size: calc(1rem + 0.125 * (100vw - 21.875rem) / 68.125);
+    }
+}
+
+@supports (font-size: clamp( 1.25rem , 1.1697247706rem  +  0.3669724771vw , 1.5rem )) {
+    .who-teaches__name {
+      font-size: clamp( 1.25rem , 1.1697247706rem  +  0.3669724771vw , 1.5rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.25rem , 1.1697247706rem  +  0.3669724771vw , 1.5rem )) {
+    .who-teaches__name {
+      font-size: calc(1.25rem + 0.25 * (100vw - 21.875rem) / 68.125);
     }
 }
 }
