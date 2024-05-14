@@ -10,9 +10,10 @@
 .tabs {
 	&__navigation {
 		display: flex;
-		max-width: 1205px;
+		max-width: 1202px;
 		margin: 0 auto;
 		position: relative;
+		justify-content: center;
 		padding-bottom: toRem(20);
 		&::after {
 			content: "";
@@ -22,52 +23,104 @@
 			bottom: 0;
 			left: 0;
 			background: #757575;
+			@media (max-width: $mobile) {
+				display: none;
+			}
 		}
 	}
 	&__button {
+		@media (any-hover: hover) {
+			&:hover {
+				.tabs__image {
+					fill: #5b0bc3;
+					box-shadow: 0 0 10px 0 rgba(91, 11, 195, 0.7);
+				}
+			}
+		}
 		display: flex;
 		align-items: center;
 		column-gap: 15px;
 		position: relative;
+		transition: all 0.3s;
 		&:nth-child(1) {
-			padding-right: toRem(30);
+			@include adaptiveValue("padding-right", 30, 20, 0, 1410, 479.98);
 		}
 		&:nth-child(2) {
-			padding-left: toRem(30);
-			padding-right: toRem(30);
+			@include adaptiveValue("padding-right", 30, 10);
+			@include adaptiveValue("padding-left", 30, 10);
 		}
 		&:nth-child(3) {
-			padding-left: toRem(30);
+			@include adaptiveValue("padding-left", 30, 20, 0, 1410, 479.98);
 		}
 		&::after {
-			transition: all 0.3s;
 			content: "";
+			transition: all 0.3s;
 			position: absolute;
 			width: 0;
 			height: 5px;
 			bottom: -21px;
+			@media (max-width: $mobile) {
+				bottom: -11px;
+			}
+			@media (max-width: $mobileSmall) {
+				bottom: -21px;
+			}
 			left: 0;
 			z-index: 1;
 			background: #fdb600;
 		}
 	}
+	&__image {
+		border-radius: 100%;
+
+		transition: all 0.4s;
+
+		fill: #9747ff;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
 	&__name {
 		text-align: left;
 	}
-	&__title {
-		@include adaptiveValue("font-size", 24, 20);
+	&__title-pc {
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
+	&__title-tablet {
+		display: none;
+		@media (max-width: $tablet) {
+			display: block;
+		}
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+	&__title-mobile {
+		display: none;
+		@media (max-width: $mobileSmall) {
+			display: block;
+		}
+		@media (max-width: em(430)) {
+			display: none;
+		}
 	}
 	&__label {
 		font-weight: 600;
 		font-size: toRem(18);
 		color: rgba(0, 0, 0, 0.5);
+		@media (max-width: em(430)) {
+			color: #000;
+			font-size: toRem(20);
+		}
 	}
 	&__content {
 	}
 	&__slider {
 	}
 	&__wrapper {
-		@include adaptiveValue("padding-top", 50, 20);
+		@include adaptiveValue("padding-top", 50, 30);
 	}
 	&__slide {
 	}
@@ -80,17 +133,20 @@
 
 .tabs-slide {
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-	padding: 4px;
-	width: 330px;
-	flex: 0 0 330px;
+	@include adaptiveValue("flex-basis", 330, 236);
 	border-radius: 20px;
 	text-align: center;
 	position: relative;
+	padding: 4px;
 	&__body {
 		background: white;
-		padding: 30px 20px 30px 20px;
+		padding: 30px 23.5px 30px 23.5px;
+		@media (max-width: $mobileSmall) {
+			padding: 20px 10px 20px 10px;
+		}
 		border-radius: 20px;
 		display: grid;
+		height: 100%;
 	}
 	&::before {
 		content: "";
@@ -119,51 +175,46 @@
 	&__title {
 		font-family: var(--second-family);
 		font-weight: 500;
-		font-size: toRem(28);
+		@include adaptiveValue("font-size", 28, 24);
 		&:not(:last-child) {
-			margin-bottom: toRem(20);
-			@media (max-width: $mobile) {
-				margin-bottom: toRem(10);
-			}
+			@include adaptiveValue("margin-bottom", 20, 10);
 		}
 	}
 	&__age {
-		font-size: toRem(24);
+		@include adaptiveValue("font-size", 24, 18);
 		&:not(:last-child) {
-			margin-bottom: toRem(25);
-			@media (max-width: $mobile) {
-				margin-bottom: toRem(20);
-			}
+			@include adaptiveValue("margin-bottom", 25, 10);
 		}
 	}
 	&__info {
 		display: grid;
-		row-gap: 10px;
+		@include adaptiveValue("font-size", 20, 16);
+		@include adaptiveValue("row-gap", 10, 5);
 		&:not(:last-child) {
-			margin-bottom: toRem(25);
-			@media (max-width: $mobile) {
-				margin-bottom: toRem(20);
-			}
+			@include adaptiveValue("margin-bottom", 25, 10);
 		}
 	}
 	&__weakdays {
 		justify-self: center;
 		padding-left: toRem(27);
-		background: url("@img/icons/calendar.svg") 0 1px no-repeat;
+		background: url("@img/icons/calendar.svg") 0 1px/22px no-repeat;
 	}
 	&__time {
 		justify-self: center;
 		padding-left: toRem(25);
-		background: url("@img/icons/clock.svg") 0 3px no-repeat;
+		background: url("@img/icons/clock.svg") 0 3px/20px no-repeat;
 	}
 	&__phone {
 		justify-self: center;
 		padding-left: toRem(25);
-		background: url("@img/icons/phone.svg") 0 2px no-repeat;
+		background: url("@img/icons/phone.svg") 0 2px/21px no-repeat;
+		transition: all 0.2s;
+		&:hover {
+			color: #9747ff;
+		}
 	}
 	&__price {
 		font-weight: 600;
-		font-size: toRem(24);
 		color: #9747ff;
 		border: 2px solid #9747ff;
 		border-radius: 40px;
@@ -174,13 +225,19 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+		@media (max-width: $mobileSmall) {
+			padding: 15px 10px;
+		}
 	}
 	&__money {
 		font-family: "Open sans";
 		font-variant-numeric: lining-nums tabular-nums;
+		@include adaptiveValue("font-size", 24, 20);
 	}
 	&__wand {
-		padding: 0px 20px;
+		@include adaptiveValue("padding-right", 20, 10);
+		@include adaptiveValue("padding-left", 20, 10);
+		@include adaptiveValue("font-size", 18, 16);
 	}
 	&__activity {
 	}

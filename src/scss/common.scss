@@ -36,3 +36,6 @@
 		}
 	}
 }
+.tabs-title {
+	@include adaptiveValue("font-size", 24, 18, 0, 1410, 479.98);
+}

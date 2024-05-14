@@ -7,7 +7,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from "swiper"
-import {Autoplay} from "swiper/modules"
+import {} from "swiper/modules"
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -34,18 +34,17 @@ function initSliders() {
 			// Указываем класс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Autoplay],
+			// modules: [Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: "auto",
-			spaceBetween: 30,
+			spaceBetween: 20,
 			// freeMode: {
 			// 	enabled: true,
 			// },
 			speed: 800,
+      // autoHeight: true,
 			// loop: true,
-			// autoHeight: true,
-
 			// touchRatio: 0,
 			// simulateTouch: false,
 			//preloadImages: false,
@@ -80,30 +79,25 @@ function initSliders() {
 			// 	nextEl: ".swiper-button-next",
 			// },
 			// Брейкпоинты
-			// breakpoints: {
-			// 	440: {
-			// 		slidesPerView: 1,
-			// 		spaceBetween: 30,
-			// 	},
-			// 	700: {
-			// 		slidesPerView: 2,
-			// 		spaceBetween: 30,
-			// 	},
-			// 	980: {
-			// 		slidesPerView: 3,
-			// 		spaceBetween: 30,
-			// 	},
-			// 	1328: {
-			// 		slidesPerView: 4,
-			// 		spaceBetween: 30,
-			// 	},
-			// },
+			breakpoints: {
+				479.98: {
+          spaceBetween: 30,
+				},
+				// 700: {
+				// 	slidesPerView: 2,
+				// 	spaceBetween: 30,
+				// },
+				// 980: {
+				// 	slidesPerView: 3,
+				// 	spaceBetween: 30,
+				// },
+				// 1328: {
+				// 	slidesPerView: 4,
+				// 	spaceBetween: 30,
+				// },
+			},
 			// События
 			on: {
-        breakpoint: function(swiper, info){
-          !info.autoHeight ? document.querySelector('.tabs__wrapper').style.height = 'auto': '';
-          swiper.updateSize();
-        }
       },
 		})
 	}
