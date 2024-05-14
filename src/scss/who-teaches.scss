@@ -1,0 +1,35 @@
+.who-teaches {
+	&__conatiner {
+	}
+	&__title {
+	}
+	&__items {
+		display: flex;
+		gap: 30px;
+	}
+	&__item {
+		flex: 0 1 25%;
+		background-color: #dcccf1;
+		border-radius: 20px;
+		padding: 20px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+	&__image {
+	}
+	&__name {
+		font-family: var(--second-family);
+		font-weight: 700;
+		@media (max-width: $mobileSmall) {
+			font-weight: 500;
+		}
+		@include adaptiveValue("font-size", 24, 20);
+		line-height: 1.25;
+	}
+	&__text {
+	}
+}
+.title {
+}
