@@ -9,6 +9,9 @@
 		min-height: 88px;
 		display: flex;
 		align-items: center;
+		@media (max-width: $mobile) {
+			justify-content: center;
+		}
 	}
 	&__menu {
 	}
@@ -18,9 +21,6 @@
 	}
 	&__list {
 		display: flex;
-		@media (max-width: $tablet) {
-			justify-content: center;
-		}
 		@include adaptiveValue("gap", 40, 15);
 	}
 	&__item {
@@ -30,5 +30,11 @@
 		font-family: var(--second-family);
 		color: #fff;
 		@include adaptiveValue("font-size", 24, 16);
+		transition: all 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: rgba(255, 255, 255, 0.8);
+			}
+		}
 	}
 }

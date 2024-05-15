@@ -1,20 +1,85 @@
 .who-teaches {
+	@include adaptiveValue("padding-bottom", 150, 60);
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		@include adaptiveValue("width", 446, 196);
+		@include adaptiveValue("height", 100, 87);
+		@include adaptiveValue("bottom", -100, -60);
+		left: 0;
+		background: url("@img/who-teaches/curved-line-yellow.svg") 0 0/100%
+			no-repeat;
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		@include adaptiveValue("width", 390, 120);
+		@include adaptiveValue("height", 98, 87);
+		@include adaptiveValue("top", -88, 0);
+		right: 0;
+		background: url("@img/who-teaches/curved-line.svg") 0 0/100% no-repeat;
+		@media (max-width: $mobileSmall) {
+			display: none;
+		}
+	}
+	&__decor {
+		position: absolute;
+		top: 22px;
+		@include adaptiveValue("left", 0, -500, 0, 1920, 991.98);
+		z-index: -1;
+		@media (max-width: $tablet) {
+			display: none;
+		}
+	}
 	&__conatiner {
 	}
 	&__title {
 	}
 	&__items {
 		display: flex;
-		gap: 30px;
+		justify-content: center;
+		column-gap: 30px;
+		@include adaptiveValue("row-gap", 82, 20, 0, 1410, 479.98);
+		@media (max-width: em(712)) {
+			flex-direction: column;
+		}
+	}
+	&__column {
+		flex: 0 1 50%;
+		justify-content: center;
+		display: flex;
+		column-gap: 30px;
+		@include adaptiveValue("row-gap", 82, 20, 0, 1410, 479.98);
+		@media (max-width: em(1440)) {
+			flex-direction: column;
+			flex: 0 1 330px;
+		}
+		@media (max-width: em(712)) {
+			margin: 0 auto;
+		}
+	}
+	&__column--right {
+		@media (max-width: em(1440)) {
+			margin-top: 40px;
+		}
+		@media (max-width: em(712)) {
+			margin-top: 0;
+		}
 	}
 	&__item {
-		flex: 0 1 25%;
+		flex: 0 1 50%;
+		@media (max-width: em(712)) {
+			width: 320px;
+		}
 		background-color: #dcccf1;
 		border-radius: 20px;
 		padding: 20px;
 		text-align: center;
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		gap: 15px;
 	}
 	&__image {

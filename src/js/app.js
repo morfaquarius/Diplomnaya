@@ -32,13 +32,13 @@ import * as flsFunctions from "./files/functions.js"
 /* (i) необходимо для корректного отображения webp из css */
 flsFunctions.isWebp()
 /* Добавление класса touch для HTML если браузер мобильный */
-// flsFunctions.addTouchClass();
+ flsFunctions.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
 // flsFunctions.addLoadedClass();
 /* Модуль для работы из меню (Бургер) */
 // flsFunctions.menuInit();
 /* Учет плавающей панели на мобильных устройствах при 100vh */
-// flsFunctions.fullVHfix();
+ flsFunctions.fullVHfix();
 /* Форматирование чисел */
 // import './libs/wNumb.min.js';
 
@@ -183,7 +183,7 @@ import "./files/sliders.js"
 import * as flsScroll from "./files/scroll/scroll.js"
 
 // Плавная навигация по странице
-// flsScroll.pageNavigation();
+ flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру во время прокрутки
 // flsScroll.headerScroll();
