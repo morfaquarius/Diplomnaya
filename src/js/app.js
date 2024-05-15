@@ -46,7 +46,7 @@ flsFunctions.isWebp()
 Модуль "Спойлеры"
 Сниппет (HTML): spollers
 */
-// flsFunctions.spollers();
+ flsFunctions.spollers();
 /*
 
 Модуль "Табы"

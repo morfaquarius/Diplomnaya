@@ -1,0 +1,48 @@
+.questions {
+	@include adaptiveValue("padding-bottom", 90, 60);
+	&__container {
+		max-width: em(1170);
+	}
+	&__spollers {
+	}
+}
+.who-teaches {
+	&__title {
+		span {
+			&:first-child {
+				margin-right: 15%;
+				@media (max-width: $tablet) {
+					margin-right: 20%;
+				}
+				@media (max-width: $mobile) {
+					margin-right: 23%;
+				}
+				@media (max-width: $mobileSmall) {
+					margin-right: 30%;
+				}
+			}
+		}
+		span {
+			&:last-child {
+				margin-left: 15%;
+				@media (max-width: $tablet) {
+					margin-left: 20%;
+				}
+				@media (max-width: $mobile) {
+					margin-left: 23%;
+				}
+				@media (max-width: $mobileSmall) {
+					margin-left: 30%;
+				}
+			}
+		}
+	}
+}
+.spollers {
+	&__item {
+	}
+	&__title {
+	}
+	&__body {
+	}
+}

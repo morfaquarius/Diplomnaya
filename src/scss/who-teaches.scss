@@ -4,10 +4,11 @@
 	&::after {
 		content: "";
 		position: absolute;
-		@include adaptiveValue("width", 446, 196);
-		@include adaptiveValue("height", 100, 87);
-		@include adaptiveValue("bottom", -100, -60);
+		@include adaptiveValue("width", 446, 150);
+		@include adaptiveValue("height", 100, 87, 0, 1920, 991.98);
+		@include adaptiveValue("bottom", -100, -40, 0, 1920, 991.98);
 		left: 0;
+		z-index: -1;
 		background: url("@img/who-teaches/curved-line-yellow.svg") 0 0/100%
 			no-repeat;
 		@media (max-width: $mobileSmall) {
