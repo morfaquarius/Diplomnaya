@@ -625,16 +625,22 @@ svg * {
   line-height: 1.25;
 }
 
+.questions {
+  position: relative;
+}
+
+.questions::after {
+  content: "";
+  position: absolute;
+  width: 477px;
+  height: 388px;
+  top: 220px;
+  background: url("../img/questions/gray-decoration02.svg") 0 0/100% no-repeat;
+  z-index: 2;
+}
+
 .questions__container {
-  max-width: 73.125em;
-}
-
-.who-teaches__title span:first-child {
-  margin-right: 15%;
-}
-
-.who-teaches__title span:last-child {
-  margin-left: 15%;
+  max-width: 1170px;
 }
 
 .swiper {
@@ -977,6 +983,10 @@ svg * {
   .who-teaches__decor {
     left: 0.0000000625rem;
   }
+
+  .questions::after {
+    left: 1.25rem;
+  }
 }
 
 @media (max-width: 90em) {
@@ -1036,12 +1046,8 @@ svg * {
     display: none;
   }
 
-  .who-teaches__title span:first-child {
-    margin-right: 20%;
-  }
-
-  .who-teaches__title span:last-child {
-    margin-left: 20%;
+  .questions::after {
+    left: -25rem;
   }
 }
 
@@ -1086,12 +1092,8 @@ svg * {
     display: none;
   }
 
-  .who-teaches__title span:first-child {
-    margin-right: 23%;
-  }
-
-  .who-teaches__title span:last-child {
-    margin-left: 23%;
+  .questions::after {
+    display: none;
   }
 }
 
@@ -1214,14 +1216,6 @@ svg * {
 
   .who-teaches__name {
     font-weight: 500;
-  }
-
-  .who-teaches__title span:first-child {
-    margin-right: 30%;
-  }
-
-  .who-teaches__title span:last-child {
-    margin-left: 30%;
   }
 }
 
@@ -2403,6 +2397,18 @@ svg * {
 @supports not (left: clamp( -31.25rem , -64.6537790802rem  +  53.8781492856vw , 0.0000000625rem )) {
     .who-teaches__decor {
       left: calc(-31.25rem + 31.2500000625 * (100vw - 61.99875rem) / 58.00125);
+    }
+}
+
+@supports (left: clamp( -25rem , -53.0591743712rem  +  45.2576453094vw , 1.25rem )) {
+    .questions::after {
+      left: clamp( -25rem , -53.0591743712rem  +  45.2576453094vw , 1.25rem );
+    }
+}
+
+@supports not (left: clamp( -25rem , -53.0591743712rem  +  45.2576453094vw , 1.25rem )) {
+    .questions::after {
+      left: calc(-25rem + 26.25 * (100vw - 61.99875rem) / 58.00125);
     }
 }
 }
