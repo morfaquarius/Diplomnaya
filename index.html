@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240515010249">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240515215738">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
 					<!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="" class="menu__link">Преподаватели</a></li>
+							<li class="menu__item"><a href="" class="menu__link" data-goto=".who-teaches" data-goto-speed="1000">Преподаватели</a></li>
 							<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
 							<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
 						</ul>
@@ -272,51 +272,65 @@
 						<span>Кто преподает</span> <br> <span>занятия?</span>
 					</h2>
 					<div class="who-teaches__items">
-						<div class="who-teaches__item">
-							<div class="who-teaches__image">
-								<picture><source srcset="img/who-teaches/01.webp" type="image/webp"><img src="img/who-teaches/01.png" alt="Якубова Марал Сапардурдыевна"></picture>
+						<div class="who-teaches__column">
+							<div class="who-teaches__item">
+								<div class="who-teaches__image">
+									<picture><source srcset="img/who-teaches/01.webp" type="image/webp"><img src="img/who-teaches/01.png" alt="Якубова Марал Сапардурдыевна"></picture>
+								</div>
+								<div class="who-teaches__name">
+									Якубова Марал Сапардурдыевна
+								</div>
+								<div class="who-teaches__text">
+									Уроки по 3д ручке, IT-KIDS и обучение грамоте “Грамотей”
+								</div>
 							</div>
-							<div class="who-teaches__name">
-								Якубова Марал Сапардурдыевна
-							</div>
-							<div class="who-teaches__text">
-								Уроки по 3д ручке, IT-KIDS и обучение грамоте “Грамотей”
-							</div>
-						</div>
-						<div class="who-teaches__item">
-							<div class="who-teaches__image">
-								<picture><source srcset="img/who-teaches/02.webp" type="image/webp"><img src="img/who-teaches/02.png" alt="Мокимова Эльвира Рустамовна"></picture>
-							</div>
-							<div class="who-teaches__name">
-								Мокимова Эльвира Рустамовна
-							</div>
-							<div class="who-teaches__text">
-								Занятия по робототехнике, дошкольники 4-7 лет и школьники 1-4 классы
-							</div>
-						</div>
-						<div class="who-teaches__item">
-							<div class="who-teaches__image">
-								<picture><source srcset="img/who-teaches/03.webp" type="image/webp"><img src="img/who-teaches/03.png" alt="Архипова Арина Сергеевна"></picture>
-							</div>
-							<div class="who-teaches__name">
-								Архипова Арина Сергеевна
-							</div>
-							<div class="who-teaches__text">
-								Занятия по мультипликации, робототехнике 4-7 лет и педагог доп. образования
+							<div class="who-teaches__item">
+								<div class="who-teaches__image">
+									<picture><source srcset="img/who-teaches/02.webp" type="image/webp"><img src="img/who-teaches/02.png" alt="Мокимова Эльвира Рустамовна"></picture>
+								</div>
+								<div class="who-teaches__name">
+									Мокимова Эльвира Рустамовна
+								</div>
+								<div class="who-teaches__text">
+									Занятия по робототехнике, дошкольники 4-7 лет и школьники 1-4 классы
+								</div>
 							</div>
 						</div>
-						<div class="who-teaches__item">
-							<div class="who-teaches__image">
-								<picture><source srcset="img/who-teaches/04.webp" type="image/webp"><img src="img/who-teaches/04.png" alt="Хуснутдинова Ландыш Ильшатовна"></picture>
+						<div class="who-teaches__column who-teaches__column--right">
+							<div class="who-teaches__item">
+								<div class="who-teaches__image">
+									<picture><source srcset="img/who-teaches/03.webp" type="image/webp"><img src="img/who-teaches/03.png" alt="Архипова Арина Сергеевна"></picture>
+								</div>
+								<div class="who-teaches__name">
+									Архипова Арина Сергеевна
+								</div>
+								<div class="who-teaches__text">
+									Занятия по мультипликации, робототехнике 4-7 лет и педагог доп. образования
+								</div>
 							</div>
-							<div class="who-teaches__name">
-								Хуснутдинова Ландыш Ильшатовна
-							</div>
-							<div class="who-teaches__text">
-								Каллиграфия. Коррекция почерка и обучение грамоте “Грамотей”
+							<div class="who-teaches__item">
+								<div class="who-teaches__image">
+									<picture><source srcset="img/who-teaches/04.webp" type="image/webp"><img src="img/who-teaches/04.png" alt="Хуснутдинова Ландыш Ильшатовна"></picture>
+								</div>
+								<div class="who-teaches__name">
+									Хуснутдинова Ландыш Ильшатовна
+								</div>
+								<div class="who-teaches__text">
+									Каллиграфия. Коррекция почерка и обучение грамоте “Грамотей”
+								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="who-teaches__decor">
+					<img src="img/who-teaches/gray-decoration01.svg" alt="">
+				</div>
+			</section>
+			<section class="questions">
+				<div class="questions__container">
+					<h2 class="who-teaches__title title">
+						<span>Часто задаваемые</span> <br> <span>вопросы</span>
+					</h2>
 				</div>
 			</section>
 		</main>
@@ -325,7 +339,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240515010249"></script>
+	<script src="js/app.min.js?_v=20240515215738"></script>
 </body>
 
 </html>
