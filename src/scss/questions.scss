@@ -17,6 +17,36 @@
 	&__container {
 		max-width: 1170px;
 	}
+	&__title {
+		span {
+			&:first-child {
+				margin-right: 20%;
+				@media (max-width: $tablet) {
+					margin-right: 23%;
+				}
+				@media (max-width: $mobile) {
+					margin-right: 25%;
+				}
+				@media (max-width: $mobileSmall) {
+					margin-right: 30%;
+				}
+			}
+		}
+		span {
+			&:last-child {
+				margin-left: 20%;
+				@media (max-width: $tablet) {
+					margin-left: 23%;
+				}
+				@media (max-width: $mobile) {
+					margin-left: 25%;
+				}
+				@media (max-width: $mobileSmall) {
+					margin-left: 30%;
+				}
+			}
+		}
+	}
 	&__spollers {
 	}
 }

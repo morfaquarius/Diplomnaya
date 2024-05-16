@@ -9,6 +9,7 @@
 		transition-timing-function: linear !important;
 	}
 	&__slide {
+		@include adaptiveValue("max-width", 450, 317.14);
 	}
 	&__preview {
 		aspect-ratio: 16 / 9;

@@ -111,9 +111,8 @@ function initSliders() {
 			modules: [Autoplay, FreeMode],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 4,
+			slidesPerView: "auto",
 			spaceBetween: 30,
-			autoHeight: false,
 			speed: 4000,
 			freeMode: {
 				enabled: true,
