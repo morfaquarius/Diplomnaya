@@ -643,6 +643,14 @@ svg * {
   max-width: 1170px;
 }
 
+.questions__title span:first-child {
+  margin-right: 20%;
+}
+
+.questions__title span:last-child {
+  margin-left: 20%;
+}
+
 .gallery__slider {
   background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: %23FDB600; stroke-width: 12; stroke-dasharray: 21 30'/></svg>");
 }
@@ -1877,6 +1885,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding-bottom: 2.125rem;
   }
 
+  .gallery__slide {
+    max-width: 28.125rem;
+  }
+
   .reviews {
     padding-top: 5.625rem;
   }
@@ -1984,6 +1996,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .questions::after {
     left: -25rem;
   }
+
+  .questions__title span:first-child {
+    margin-right: 23%;
+  }
+
+  .questions__title span:last-child {
+    margin-left: 23%;
+  }
 }
 
 @media (max-width: 61.99875em) and (max-width: 47.99875em) {
@@ -2029,6 +2049,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .questions::after {
     display: none;
+  }
+
+  .questions__title span:first-child {
+    margin-right: 25%;
+  }
+
+  .questions__title span:last-child {
+    margin-left: 25%;
   }
 }
 
@@ -2151,6 +2179,14 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .who-teaches__name {
     font-weight: 500;
+  }
+
+  .questions__title span:first-child {
+    margin-right: 30%;
+  }
+
+  .questions__title span:last-child {
+    margin-left: 30%;
   }
 }
 
@@ -2403,6 +2439,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .gallery__slider {
     padding-bottom: 0.6875rem;
+  }
+
+  .gallery__slide {
+    max-width: 19.82125rem;
   }
 
   .reviews {
@@ -2998,6 +3038,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @supports not (padding-bottom: clamp( 0.6875rem , 0.2259174312rem  +  2.1100917431vw , 2.125rem )) {
     .gallery__slider {
       padding-bottom: calc(0.6875rem + 1.4375 * (100vw - 21.875rem) / 68.125);
+    }
+}
+
+@supports (max-width: clamp( 19.82125rem , 17.1549082569rem  +  12.1889908257vw , 28.125rem )) {
+    .gallery__slide {
+      max-width: clamp( 19.82125rem , 17.1549082569rem  +  12.1889908257vw , 28.125rem );
+    }
+}
+
+@supports not (max-width: clamp( 19.82125rem , 17.1549082569rem  +  12.1889908257vw , 28.125rem )) {
+    .gallery__slide {
+      max-width: calc(19.82125rem + 8.30375 * (100vw - 21.875rem) / 68.125);
     }
 }
 

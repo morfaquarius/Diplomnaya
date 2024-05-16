@@ -4149,9 +4149,8 @@
                 modules: [ Autoplay, freeMode ],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 4,
+                slidesPerView: "auto",
                 spaceBetween: 30,
-                autoHeight: false,
                 speed: 4e3,
                 freeMode: {
                     enabled: true
