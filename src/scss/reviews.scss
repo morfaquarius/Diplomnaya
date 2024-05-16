@@ -1,0 +1,9 @@
+.reviews {
+	@include adaptiveValue("padding-top", 90, 40);
+	&__container {
+	}
+}
+.activities {
+	&__title {
+	}
+}

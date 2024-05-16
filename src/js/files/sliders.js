@@ -7,7 +7,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from "swiper"
-import {} from "swiper/modules"
+import {Autoplay, FreeMode} from "swiper/modules"
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -99,6 +99,84 @@ function initSliders() {
 			// События
 			on: {
       },
+		})
+	}
+  if (document.querySelector(".gallery__slider")) {
+		// Указываем класс нужного слайдера
+		// Создаем слайдер
+	    new Swiper(".gallery__slider", {
+			// Указываем класс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Autoplay, FreeMode],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 30,
+			autoHeight: false,
+			speed: 4000,
+			freeMode: {
+				enabled: true,
+			},
+			loop: true,
+			//touchRatio: 0,
+			//simulateTouch: false,
+			// preloadImages: false,
+			// lazy: {
+			// 	loadPrevNext: true,
+			// },
+
+			// Эффекты
+			// effect: 'fade',
+			autoplay: {
+				delay: 0,
+				disableOnInteraction: false,
+			},
+
+			// Пагинация
+
+			// pagination: {
+			// 	el: '.gallery__pagination',
+			// 	clickable: true,
+			// },
+
+			// Скроллбар
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Кнопки "влево/вправо"
+			/*
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+      */
+			// Брейкпоинты
+			// breakpoints: {
+			// 	// 320: {
+			// 	// 	autoHeight: false,
+			// 	// },
+			// 	// 992: {
+			// 	// 	autoHeight: false,
+			// 	// },
+			// 	// 1070: {
+			// 	// 	slidesPerView: 1,
+			// 	// 	spaceBetween: 20,
+			// 	// },
+			// 	// 1333: {
+			// 	// 	slidesPerView: 1,
+			// 	// 	spaceBetween: 16,
+			// 	// },
+			// },
+
+			// События
+			on: {
+				slideChange: function (swiper) {},
+			},
 		})
 	}
 }

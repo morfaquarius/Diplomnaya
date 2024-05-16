@@ -1,5 +1,5 @@
 .questions {
-	@include adaptiveValue("padding-bottom", 90, 60);
+	@include adaptiveValue("padding-bottom", 90, 40);
 	position: relative;
 	&::after {
 		content: "";
