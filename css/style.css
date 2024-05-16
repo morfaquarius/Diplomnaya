@@ -466,7 +466,7 @@ svg * {
 
 .tabs-slide__body {
   background: white;
-  padding: 30px 23.5px 30px 23.5px;
+  padding: 30px 20px 30px 20px;
   border-radius: 20px;
   display: -ms-grid;
   display: grid;
