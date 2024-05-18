@@ -6060,7 +6060,6 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             modules_flsModules.gallery = galleyItems;
         }
-        window["FLS"] = true;
         isWebp();
         addTouchClass();
         fullVHfix();
