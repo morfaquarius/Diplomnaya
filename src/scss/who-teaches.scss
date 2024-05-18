@@ -1,5 +1,5 @@
 .who-teaches {
-	@include adaptiveValue("padding-bottom", 150, 60);
+	@include adaptiveValue("padding-bottom", 130, 40);
 	position: relative;
 	&::after {
 		content: "";
@@ -95,6 +95,7 @@
 		line-height: 1.25;
 	}
 	&__text {
+		@include adaptiveValue("font-size", 20, 16);
 	}
 }
 .title {

@@ -1,5 +1,18 @@
 .gallery {
-	@include adaptiveValue("padding-bottom", 90, 40);
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		@include adaptiveValue("right", -234, -719, 0, 1410, 991.98);
+		top: -30px;
+		width: 777px;
+		height: 632px;
+		background: url("@img/gallery/gray-decoration03.svg") 0 0/100% no-repeat;
+		z-index: -1;
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
 	&__slider {
 		@include adaptiveValue("padding-top", 34, 17);
 		@include adaptiveValue("padding-bottom", 34, 17);
@@ -14,7 +27,7 @@
 	&__preview {
 		aspect-ratio: 16 / 9;
 		max-width: 100%;
-    @include adaptiveValue("height", 246, 154.29);
+		@include adaptiveValue("height", 246, 154.29);
 		border-radius: 30px;
 		object-fit: cover;
 	}

@@ -1,5 +1,20 @@
 .reviews {
 	@include adaptiveValue("padding-top", 90, 40);
+	@include adaptiveValue("padding-bottom", 130, 40);
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 25%;
+		left: -217px;
+		width: 362px;
+		height: 410px;
+		background: url("@img/rewievs/gray-decoration04.svg") 0 0/100% no-repeat;
+		z-index: -1;
+		@media (max-width: $pc) {
+			display: none;
+		}
+	}
 	&__container {
 	}
 	&__title {
