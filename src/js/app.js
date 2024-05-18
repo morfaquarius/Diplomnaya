@@ -58,7 +58,7 @@ flsFunctions.tabs()
 Модуль "Показать еще"
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+ flsFunctions.showMore();
 /*
 
 Модуль "К/После"
