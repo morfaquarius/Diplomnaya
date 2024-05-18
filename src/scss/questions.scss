@@ -1,16 +1,17 @@
 .questions {
-	@include adaptiveValue("padding-bottom", 90, 40);
+	@include adaptiveValue("padding-top", 90, 40);
+	@include adaptiveValue("padding-bottom", 130, 40);
 	position: relative;
 	&::after {
 		content: "";
 		position: absolute;
-		width: 477px;
-		height: 388px;
-		top: 220px;
-		@include adaptiveValue("left", 20, -400, 0, 1920, 991.98);
-		background: url("@img/questions/gray-decoration02.svg") 0 0/100% no-repeat;
-		z-index: 2;
-		@media (max-width: $mobile) {
+		top: 40%;
+		left: -180px;
+		width: 362px;
+		height: 410px;
+		background: url("@img/rewievs/gray-decoration04.svg") 0 0/100% no-repeat;
+		z-index: -1;
+		@media (max-width: $pc) {
 			display: none;
 		}
 	}

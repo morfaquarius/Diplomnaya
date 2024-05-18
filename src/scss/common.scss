@@ -39,3 +39,10 @@
 .tabs-title {
 	@include adaptiveValue("font-size", 24, 18, 0, 1410, 479.98);
 }
+.title-footer {
+	@include adaptiveValue("font-size", 28, 24);
+	font-weight: 700;
+	&:not(:last-child) {
+		margin-bottom: toRem(15);
+	}
+}
