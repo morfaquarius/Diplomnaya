@@ -84,6 +84,8 @@
 	&__title {
 	}
 	&__body {
+		position: relative;
+		z-index: 100;
 	}
 	&__item {
 		&:not(:last-child) {
