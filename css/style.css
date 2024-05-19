@@ -711,12 +711,12 @@ svg * {
 .questions::after {
   content: "";
   position: absolute;
-  top: 40%;
+  top: 300px;
   left: -180px;
   width: 362px;
   height: 410px;
   background: url("../img/rewievs/gray-decoration04.svg") 0 0/100% no-repeat;
-  z-index: -1;
+  z-index: 1;
 }
 
 .questions__container {
@@ -733,6 +733,7 @@ svg * {
 
 .gallery {
   position: relative;
+  z-index: 3;
 }
 
 .gallery::after {
@@ -742,11 +743,13 @@ svg * {
   width: 777px;
   height: 632px;
   background: url("../img/gallery/gray-decoration03.svg") 0 0/100% no-repeat;
-  z-index: -1;
+  z-index: 1;
 }
 
 .gallery__slider {
   background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: %23FDB600; stroke-width: 12; stroke-dasharray: 21 30'/></svg>");
+  position: relative;
+  z-index: 3;
 }
 
 .gallery__wrapper {
