@@ -53,7 +53,7 @@
 		display: flex;
 		gap: 15px;
 		&:not(:last-child) {
-			margin-bottom: toRem(15);
+			@include adaptiveValue("margin-bottom", 15, 8, 0, 1410, 479.98);
 		}
 	}
 	&__avatar {
