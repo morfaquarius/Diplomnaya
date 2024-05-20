@@ -809,10 +809,6 @@ svg * {
   gap: 15px;
 }
 
-.item-rewievs__header:not(:last-child) {
-  margin-bottom: 0.9375rem;
-}
-
 .item-rewievs__avatar img {
   border-radius: 50%;
 }
@@ -1877,6 +1873,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     row-gap: 1.875rem;
   }
 
+  .item-rewievs__header:not(:last-child) {
+    margin-bottom: 0.9375rem;
+  }
+
   .location__map {
     max-height: 29.25rem;
   }
@@ -2467,6 +2467,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .questions__title span:last-child {
     margin-left: 30%;
+  }
+
+  .item-rewievs__header:not(:last-child) {
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -3596,6 +3600,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @supports not (row-gap: clamp( 1.25rem , -0.7498736586rem  +  6.6665233006vw , 5.125rem )) {
     .who-teaches__column {
       row-gap: calc(1.25rem + 3.875 * (100vw - 29.99875rem) / 58.12625);
+    }
+}
+
+@supports (margin-bottom: clamp( 0.5rem , 0.2742078127rem  +  0.7526719855vw , 0.9375rem )) {
+    .item-rewievs__header:not(:last-child) {
+      margin-bottom: clamp( 0.5rem , 0.2742078127rem  +  0.7526719855vw , 0.9375rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 0.5rem , 0.2742078127rem  +  0.7526719855vw , 0.9375rem )) {
+    .item-rewievs__header:not(:last-child) {
+      margin-bottom: calc(0.5rem + 0.4375 * (100vw - 29.99875rem) / 58.12625);
     }
 }
 }
