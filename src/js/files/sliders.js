@@ -7,7 +7,7 @@
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
 import Swiper from "swiper"
-import {Autoplay, FreeMode} from "swiper/modules"
+import {Autoplay, FreeMode, Navigation} from "swiper/modules"
 /*
 Основные модули слайдера:
 Navigation, Pagination, Autoplay,
@@ -19,7 +19,7 @@ EffectFade, Lazy, Manipulation
 // Базовые стили
 import "../../scss/base/swiper.scss"
 // Полный набор стилей с scss/libs/swiper.scss
-//import "../../scss/libs/swiper.scss"
+// import "../../scss/libs/swiper.scss"
 // Полный набор стилей с node_modules
 //import "swiper/css"
 
@@ -34,7 +34,7 @@ function initSliders() {
 			// Указываем класс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			// modules: [Autoplay],
+			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			slidesPerView: "auto",
@@ -74,10 +74,10 @@ function initSliders() {
 			*/
 
 			// Кнопки "влево/вправо"
-			// navigation: {
-			// 	prevEl: ".swiper-button-prev",
-			// 	nextEl: ".swiper-button-next",
-			// },
+			navigation: {
+				prevEl: ".swiper-button-prev",
+				nextEl: ".swiper-button-next",
+			},
 			// Брейкпоинты
 			breakpoints: {
 				479.98: {

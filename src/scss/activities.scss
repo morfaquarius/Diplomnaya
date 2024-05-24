@@ -119,10 +119,12 @@
 	&__content {
 	}
 	&__slider {
+		position: relative;
 	}
 	&__wrapper {
 		@include adaptiveValue("padding-top", 50, 30);
 		padding-bottom: toRem(20);
+		cursor: grab;
 	}
 	&__slide {
 	}
@@ -243,4 +245,30 @@
 	}
 	&__activity {
 	}
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	transform: translate(0, -5%);
+	svg {
+		@include adaptiveValue("width", 54, 40);
+		@include adaptiveValue("height", 54, 40);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			svg path {
+				stroke: #9747ff;
+			}
+		}
+	}
+}
+.swiper-button-next {
+	right: 25px;
+	transform: translate(0, -25%) rotate(180deg);
+}
+.swiper-button-prev {
+	left: 25px;
 }
