@@ -19,7 +19,7 @@ EffectFade, Lazy, Manipulation
 // Базовые стили
 import "../../scss/base/swiper.scss"
 // Полный набор стилей с scss/libs/swiper.scss
-// import "../../scss/libs/swiper.scss"
+//import "../../scss/libs/swiper.scss"
 // Полный набор стилей с node_modules
 //import "swiper/css"
 

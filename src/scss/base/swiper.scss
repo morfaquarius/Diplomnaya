@@ -47,3 +47,8 @@
 .swiper-fade.swiper-free-mode .swiper-slide {
 	transition-timing-function: ease-out;
 }
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+	display: none;
+}
