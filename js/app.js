@@ -6230,9 +6230,10 @@ PERFORMANCE OF THIS SOFTWARE.
         }
         document.querySelectorAll(".tabs-slide__info-button").forEach((button => {
             button.addEventListener("click", (function() {
-                this.closest(".tabs-slide").classList.toggle("active");
-                document.querySelector(".open").classList.toggle("disable");
-                document.querySelector(".close").classList.toggle("disable");
+                const id = this.getAttribute("data-id");
+                document.querySelector(`.tabs-slide[data-id="${id}"]`).classList.toggle("active");
+                document.querySelector(`.open[data-id="${id}"]`).classList.toggle("disable");
+                document.querySelector(`.close[data-id="${id}"]`).classList.toggle("disable");
             }));
         }));
         isWebp();
