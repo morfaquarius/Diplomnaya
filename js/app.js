@@ -6228,6 +6228,13 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
             modules_flsModules.gallery = galleyItems;
         }
+        document.querySelectorAll(".tabs-slide__info-button").forEach((button => {
+            button.addEventListener("click", (function() {
+                this.closest(".tabs-slide").classList.toggle("active");
+                document.querySelector(".open").classList.toggle("disable");
+                document.querySelector(".close").classList.toggle("disable");
+            }));
+        }));
         isWebp();
         addTouchClass();
         fullVHfix();

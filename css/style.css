@@ -541,24 +541,29 @@ svg * {
 }
 
 .tabs-slide {
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  text-align: center;
   position: relative;
   padding: 4px;
 }
 
-.tabs-slide__body {
-  background: white;
-  padding: 30px 20px 30px 20px;
-  border-radius: 20px;
-  display: -ms-grid;
-  display: grid;
-  height: 100%;
+.tabs-slide.active .tabs-slide__back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
 }
 
-.tabs-slide::before {
+.tabs-slide.active .tabs-slide__front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.tabs-slide__front,
+.tabs-slide__back {
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.tabs-slide__front::before,
+.tabs-slide__back::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -570,15 +575,62 @@ svg * {
   z-index: -1;
 }
 
-.tabs-slide::after {
-  content: "";
+.tabs-slide__front {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.tabs-slide__back {
   position: absolute;
-  background: url("../img/icons/info.svg") 0/100% no-repeat;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 4px;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.125rem;
+}
+
+.tabs-slide__body {
+  background: white;
+  padding: 30px 20px 30px 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.tabs-slide__info-button {
+  position: absolute;
+}
+
+.tabs-slide__info-button svg {
+  border-radius: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.tabs-slide__info-button svg :nth-child(1) {
+  fill: #9747ff;
 }
 
 .tabs-slide__title {
   font-family: var(--second-family);
   font-weight: 500;
+  text-align: center;
 }
 
 .tabs-slide__info {
@@ -632,6 +684,7 @@ svg * {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  width: 100%;
 }
 
 .tabs-slide__money {
@@ -658,6 +711,10 @@ svg * {
 
 .swiper-button-prev {
   left: 25px;
+}
+
+.disable {
+  display: none;
 }
 
 .who-teaches {
@@ -935,6 +992,11 @@ svg * {
 .swiper-fade.swiper-free-mode .swiper-slide {
   -webkit-transition-timing-function: ease-out;
           transition-timing-function: ease-out;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  display: none;
 }
 
 @font-face {
@@ -1868,19 +1930,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding-left: 1.875rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button svg {
     width: 3.125rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button svg {
     height: 3.125rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button {
     top: -1.25rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button {
     right: -1.5625rem;
   }
 
@@ -2458,19 +2520,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 20px 10px 20px 10px;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button svg {
     width: 2.5rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button svg {
     height: 2.5rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button {
     top: -0.9375rem;
   }
 
-  .tabs-slide::after {
+  .tabs-slide__info-button {
     right: -1.25rem;
   }
 
@@ -3607,49 +3669,49 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @supports (width: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button svg {
       width: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem );
     }
 }
 
 @supports not (width: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button svg {
       width: calc(2.5rem + 0.625 * (100vw - 29.99875rem) / 58.12625);
     }
 }
 
 @supports (height: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button svg {
       height: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem );
     }
 }
 
 @supports not (height: clamp( 2.5rem , 2.1774397325rem  +  1.0752456936vw , 3.125rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button svg {
       height: calc(2.5rem + 0.625 * (100vw - 29.99875rem) / 58.12625);
     }
 }
 
 @supports (top: clamp( -1.25rem , -0.7762198662rem  +  -0.5376228468vw , -0.9375rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button {
       top: clamp( -1.25rem , -0.7762198662rem  +  -0.5376228468vw , -0.9375rem );
     }
 }
 
 @supports not (top: clamp( -1.25rem , -0.7762198662rem  +  -0.5376228468vw , -0.9375rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button {
       top: calc(-0.9375rem + -0.3125 * (100vw - 29.99875rem) / 58.12625);
     }
 }
 
 @supports (right: clamp( -1.5625rem , -1.0887198662rem  +  -0.5376228468vw , -1.25rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button {
       right: clamp( -1.5625rem , -1.0887198662rem  +  -0.5376228468vw , -1.25rem );
     }
 }
 
 @supports not (right: clamp( -1.5625rem , -1.0887198662rem  +  -0.5376228468vw , -1.25rem )) {
-    .tabs-slide::after {
+    .tabs-slide__info-button {
       right: calc(-1.25rem + -0.3125 * (100vw - 29.99875rem) / 58.12625);
     }
 }
@@ -4050,6 +4112,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     fill: #5b0bc3;
     -webkit-box-shadow: 0 0 10px 0 rgba(91, 11, 195, 0.7);
             box-shadow: 0 0 10px 0 rgba(91, 11, 195, 0.7);
+  }
+
+  .tabs-slide__info-button svg:hover {
+    -webkit-box-shadow: 0 0 10px 0 rgba(91, 11, 195, 0.7);
+            box-shadow: 0 0 10px 0 rgba(91, 11, 195, 0.7);
+  }
+
+  .tabs-slide__info-button svg:hover :nth-child(1) {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    fill: #5b0bc3;
   }
 
   .swiper-button-next:hover svg path,
