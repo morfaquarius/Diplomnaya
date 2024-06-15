@@ -581,6 +581,7 @@ svg * {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   text-align: center;
+  height: 100%;
 }
 
 .tabs-slide__back {
@@ -597,9 +598,32 @@ svg * {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.tabs-slide__text {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
 }
 
 .tabs-slide__body {
+  background: white;
+  padding: 30px 20px 30px 20px;
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  height: 100%;
+}
+
+.tabs-slide__body-back {
   background: white;
   padding: 30px 20px 30px 20px;
   border-radius: 20px;
@@ -2517,6 +2541,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .tabs-slide__body {
+    padding: 20px 10px 20px 10px;
+  }
+
+  .tabs-slide__body-back {
     padding: 20px 10px 20px 10px;
   }
 
