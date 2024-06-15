@@ -167,6 +167,7 @@
 		backface-visibility: hidden;
 		transition: all 0.3s;
 		text-align: center;
+		height: 100%;
 	}
 	&__back {
 		position: absolute;
@@ -179,8 +180,31 @@
 		backface-visibility: hidden;
 		transition: all 0.3s;
 		font-size: toRem(18);
+		font-weight: 400;
+	}
+	&__text {
+		align-self: flex-start;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -moz-box;
+		-moz-box-orient: vertical;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		line-clamp: 3;
+		box-orient: vertical;
 	}
 	&__body {
+		background: white;
+		padding: 30px 20px 30px 20px;
+		@media (max-width: $mobileSmall) {
+			padding: 20px 10px 20px 10px;
+		}
+		border-radius: 20px;
+		display: grid;
+		height: 100%;
+	}
+	&__body-back {
 		background: white;
 		padding: 30px 20px 30px 20px;
 		@media (max-width: $mobileSmall) {
@@ -218,6 +242,7 @@
 		font-family: var(--second-family);
 		font-weight: 500;
 		text-align: center;
+
 		@include adaptiveValue("font-size", 28, 24);
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 20, 10);
@@ -225,6 +250,7 @@
 	}
 	&__age {
 		@include adaptiveValue("font-size", 24, 18);
+
 		&:not(:last-child) {
 			@include adaptiveValue("margin-bottom", 25, 10);
 		}
