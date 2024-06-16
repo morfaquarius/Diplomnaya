@@ -602,16 +602,8 @@ svg * {
 }
 
 .tabs-slide__text {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -moz-box;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  box-orient: vertical;
+  -ms-hyphens: auto;
+      hyphens: auto;
 }
 
 .tabs-slide__body {
